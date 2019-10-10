@@ -10,6 +10,7 @@
   "dependencies": {
     "next": "9.1.1",
     "react": "16.10.2",
+    "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "16.10.2"
   }
 }
