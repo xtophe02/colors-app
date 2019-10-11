@@ -7,8 +7,8 @@ const Palette = ({ colors }) => {
     <div className="Palette">
       {/* navbar */}
       <div className="Palette-colors">
-        {colors.map(item => (
-          <ColorBox item={item} />
+        {colors.map((item,i) => (
+          <ColorBox key={i} item={item} />
         ))}
       </div>
       <style jsx>
