@@ -1,34 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
+import "./Palette.css";
 
 import ColorBox from "./ColorBox";
 
-const Palette = ({ colors }) => {
+const Palette = ({ pallete }) => {
+  const [level, setLevel] = useState(500);
   return (
     <div className="Palette">
+      <Slider
+        defaultValue={level}
+        min={100}
+        max={900}
+        step={100}
+        onAfterChange={level => {
+          setLevel(level);
+        }}
+      />
       {/* navbar */}
       <div className="Palette-colors">
-        {colors.map((item,i) => (
-          <ColorBox key={i} item={item} />
+        {pallete.colors[level].map(item => (
+          <ColorBox key={item.id} item={item} />
         ))}
       </div>
-      <style jsx>
-        {`
-          .Palette {
-            height: 100vh;
-          }
-          .Palette-colors {
-            height: 90%;
-          }
-        `}
-      </style>
-      <style jsx global>
-        {`
-          * {
-            margin: 0;
-            padding: 0;
-          }
-        `}
-      </style>
     </div>
   );
 };
