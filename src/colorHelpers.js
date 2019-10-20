@@ -20,11 +20,14 @@ const generatePalette = starterPalette => {
         id: color.name.toLowerCase().replace(/ /g, "_"),
         hex: scale[i],
         rgb: chroma(scale[i]).css(),
-        rbga: chroma(scale[i]).css().replace("rgb", "rgba").replace(")", ",1.0)")
+        rgba: chroma(scale[i])
+          .css()
+          .replace("rgb", "rgba")
+          .replace(")", ",1.0)")
       });
     }
   }
-  return newPalette
+  return newPalette;
 };
 
 const getRange = hexColor => {
@@ -44,5 +47,4 @@ const generateScale = (hexColor, numberOfColors) => {
     .mode("lab")
     .colors(numberOfColors);
 };
-
 export default generatePalette;
