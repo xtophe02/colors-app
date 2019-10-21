@@ -19,7 +19,7 @@ const Navbar = ({ level, setLevel, format, setFormat }) => {
     <div>
       <header className="Navbar">
         <div className="logo">
-          <Link href="/about">
+          <Link href="/">
             <a>reactcolorpicker</a>
           </Link>
         </div>
@@ -48,7 +48,7 @@ const Navbar = ({ level, setLevel, format, setFormat }) => {
           </Select>
         </div>
         <Snackbar
-          anchorOrigin={{ vertical: "top", horizontal: "left" }}
+          anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
           open={open}
           autoHideDuration={3000}
           message={<span id="message-id">Format Changed To {format.toUpperCase()}</span>}
