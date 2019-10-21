@@ -18,8 +18,19 @@ const Home = () => {
         ></link>
       </Head>
 
-      <Palette pallete={generatePalette(seedColors[5])} />
+      <Palette palette={generatePalette(seedColors[5])} />
+  
+
+      <style global jsx>{`
+        * {
+          margin: 0;
+          padding: 0;
+          font-family: Roboto;
+        }
+   
+      `}</style>
     </div>
+    
   );
 };
 

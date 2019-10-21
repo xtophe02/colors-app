@@ -4,12 +4,12 @@ import Navbar from "./Navbar";
 
 import ColorBox from "./ColorBox";
 
-const Palette = ({ pallete }) => {
+const Palette = ({ palette }) => {
   const [level, setLevel] = useState(500);
   const [format, setFormat] = useState("hex");
 
   return (
-    <div className="Palette">
+    <div className="Palette" >
       <Navbar
         level={level}
         setLevel={setLevel}
@@ -18,7 +18,7 @@ const Palette = ({ pallete }) => {
       />
 
       <div className="Palette-colors">
-        {pallete.colors[level].map(color => (
+        {palette.colors[level].map(color => (
           <ColorBox
             key={color.id}
             background={color[format]}
@@ -26,6 +26,10 @@ const Palette = ({ pallete }) => {
           />
         ))}
       </div>
+      <footer className='Palette-footer'>
+        {palette.paletteName}
+        <span className="emoji">{palette.emoji}</span>
+      </footer>
     </div>
   );
 };
