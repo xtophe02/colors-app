@@ -1,4 +1,4 @@
-const withCSS = require('@zeit/next-css')
+const withCSS = require("@zeit/next-css");
 module.exports = withCSS({
   // mode: "development",
   // output: {
@@ -9,8 +9,17 @@ module.exports = withCSS({
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-    ],
+        use: ["style-loader", "css-loader"]
+      }
+    ]
   },
-})
+
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"]
+    });
+
+    return config;
+  }
+});

@@ -1,21 +1,29 @@
-import React from 'react'
+import React from "react";
 import seedColors from "../src/seedColors";
 import Link from "../src/Link";
+import { withStyles } from "@material-ui/core/styles";
+import styles from "../src/styles/PaletteListStyles";
+import MiniPalette from "./MiniPalette";
 
-
-const PaletteList = () => {
+const PaletteList = props => {
+  const { classes } = props;
   return (
-    <div>
-      <h1>React Colors</h1>
-      <ul>
-        {seedColors.map(palette => (
-          <li key={palette.id}>
-            <Link href={`/palette/${palette.id}`}>{palette.paletteName}</Link>
-          </li>
-        ))}
-      </ul>
+    <div className={classes.root}>
+      <div className={classes.container}>
+        <nav className={classes.nav}>
+          <h1>React Colors</h1>
+        </nav>
+        <div className={classes.palettes}>
+          {seedColors.map(palette => (
+            // <li key={palette.id}>
+            //   <Link href={`/palette/${palette.id}`}>{palette.paletteName}</Link>
+            // </li>
+            <MiniPalette {...palette} key={palette.id} />
+          ))}
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default PaletteList
+export default withStyles(styles)(PaletteList);
