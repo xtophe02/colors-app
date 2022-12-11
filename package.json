@@ -14,7 +14,7 @@
     "@zeit/next-css": "^1.0.1",
     "apollo-server-express": "^2.9.6",
     "chroma-js": "^2.0.6",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "next": "9.1.1",
     "rc-slider": "^8.7.1",
     "react": "16.10.2",
